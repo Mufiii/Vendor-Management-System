@@ -17,7 +17,7 @@ class PurchaseOrder(models.Model):
         COMPLETED = 'completed', 'Completed'
         CANCELED = 'canceled', 'Canceled'   
 
-    po_number = models.CharField(max_length=50, unique=True)
+    po_number = models.CharField(max_length=50, unique=True,blank=True,null=True)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     order_date = models.DateTimeField()
     delivery_date = models.DateTimeField()
